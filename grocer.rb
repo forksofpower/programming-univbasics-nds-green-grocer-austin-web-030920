@@ -99,6 +99,7 @@ def checkout(cart, coupons)
   cart_with_coupons = apply_coupons(cart, coupons)
   cart_with_clearance = apply_clearance(cart)
   
+  pry
   sub_total = cart_with_clearance.map{|y| y[:price] * y[:count]}.reduce(:+)
   
   total = (sub_total >= 100.00) ? (sub_total - sub_total * SPECIAL_DISCOUNT_RATE) : sub_total
