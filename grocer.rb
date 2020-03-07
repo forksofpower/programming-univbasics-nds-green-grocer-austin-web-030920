@@ -1,4 +1,5 @@
 require 'pp'
+require 'pry'
 
 CLEARNCE_DISCOUNT_RATE = 0.20
 SPECIAL_DISCOUNT_RATE = 0.10
