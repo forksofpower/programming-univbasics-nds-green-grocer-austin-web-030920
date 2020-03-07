@@ -92,6 +92,6 @@ def checkout(cart, coupons)
   # to get subtotal, multiply all item counts by item price and then add together
   sub_total = cart_with_clearance.map{|y| y[:price] * y[:count]}.reduce(:+)
   
-  #
+  # apply special discount rate if over threshold
   total = (sub_total >= 100.00) ? (sub_total - sub_total * SPECIAL_DISCOUNT_RATE) : sub_total
 end
