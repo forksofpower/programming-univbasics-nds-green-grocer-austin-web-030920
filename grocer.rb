@@ -101,7 +101,7 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   puts "CONSOLIDATED_CART"
   pp consolidated_cart
-  cart_with_coupons = 
+  cart_with_coupons = apply_coupons(cart, coupons)
   puts "CART_WITH_COUPONS"
   pp cart_with_coupons
   cart_with_clearance = apply_clearance(cart)
