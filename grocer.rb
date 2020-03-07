@@ -94,24 +94,10 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
-  puts "CART"
-  pp cart
-  puts "COUPONS"
-  pp coupons
   consolidated_cart = consolidate_cart(cart)
-  puts "CONSOLIDATED_CART"
-  pp consolidated_cart
   cart_with_coupons = apply_coupons(consolidated_cart, coupons)
-  puts "CART_WITH_COUPONS"
-  pp cart_with_coupons
   cart_with_clearance = apply_clearance(cart_with_coupons)
-  puts "CART_WITH_CLEARANCE"
-  pp cart_with_clearance
   
   sub_total = cart_with_clearance.map{|y| y[:price] * y[:count]}.reduce(:+)
-  puts "SUB_TOTAL"
-  pp sub_total
-  puts "TOTAL"
   total = (sub_total >= 100.00) ? (sub_total - sub_total * SPECIAL_DISCOUNT_RATE) : sub_total
-  p total
 end
