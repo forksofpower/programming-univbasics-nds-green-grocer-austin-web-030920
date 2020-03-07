@@ -113,4 +113,5 @@ def checkout(cart, coupons)
   pp sub_total
   puts "TOTAL"
   total = (sub_total >= 100.00) ? (sub_total - sub_total * SPECIAL_DISCOUNT_RATE) : sub_total
+  p total
 end
