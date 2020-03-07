@@ -102,9 +102,10 @@ def checkout(cart, coupons)
   puts "CONSOLIDATED_CART"
   pp consolidated_cart
   cart_with_coupons = 
-  puts ""
+  puts "CART_WITH_COUPONS"
   pp cart_with_coupons
   cart_with_clearance = apply_clearance(cart)
+  puts "CART_WITH_CLEARANCE"
   pp cart_with_clearance
   
   sub_total = cart_with_clearance.map{|y| y[:price] * y[:count]}.reduce(:+)
